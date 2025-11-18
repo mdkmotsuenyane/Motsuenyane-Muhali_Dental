@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta name="author" content="Mokadi Motsuenyane">
+    <meta name="description" content="Contact Motsuenyane-Muhali Dental in Sibasa, Limpopo. Get directions to our clinic, call us at 072 788 8604, or email for appointments. Open Monday-Friday 08:00-17:00.">
+    <meta name="keywords" content="contact dentist Sibasa, Motsuenyane-Muhali Dental contact, dental clinic Limpopo, book dental appointment, Sibasa dentist phone, dental clinic address, emergency dentist Sibasa">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Contact Motsuenyane-Muhali Dental | Book Your Appointment">
+    <meta property="og:description" content="Get in touch with our dental clinic in Sibasa. Call 072 788 8604 or visit us at Gammbani complex. Open Monday-Friday 08:00-17:00.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.motsuenyane-muhali-dental.co.za/contact.html">
+    <meta property="og:image" content="https://www.motsuenyane-muhali-dental.co.za/_images/outside1.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Motsuenyane-Muhali Dental Sibasa">
+    <meta name="twitter:description" content="Book your dental appointment today. Call 072 788 8604 or visit us in Sibasa.">
+    <meta name="twitter:image" content="https://www.motsuenyane-muhali-dental.co.za/_images/outside1.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.motsuenyane-muhali-dental.co.za/contact.html">
+    
+    <!-- Title -->
+    <title>Contact Us | Motsuenyane-Muhali Dental - Book Appointment Sibasa</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css_assets/contact_styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="_images/logo.jpeg" type="image/x-icon">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Leaflet CSS for Open Source Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+</head>
+
+<body>
+    <header>
+        <!-- Website header -->
+        <h1>Contact us on Motsuenyane-Muhali Dental</h1>
+        <p>HAPPY TEETH, HAPPY SMILE</p>
+        <!-- Responsive Navigation -->
+        <nav class="header-nav">
+            <!-- Navigation Buttons -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <button class="oval-button" onclick="location.href='index.html'">
+                    <i class="fa-solid fa-house"></i><br>Home
+                </button>
+                <button class="oval-button" onclick="location.href='about.html'">
+                    <i class="fa-solid fa-circle-info"></i><br>About Us
+                </button>
+                <button class="oval-button" onclick="location.href='services.html'">
+                    <i class="fa-solid fa-tooth"></i><br>Services
+                </button>
+                <button class="oval-button" onclick="location.href='enquries.html'">
+                    <i class="fa-solid fa-calendar-check"></i><br>Book Now
+                </button>
+                <button class="oval-button" onclick="location.href='contact.html'" aria-current="page">
+                    <i class="fa-solid fa-envelope"></i><br>Contact Us
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main contact content -->
+    <main class="contact-wrapper">
+
+        <!-- Image of the dental practice -->
+        <section class="contact-image">
+            <div class="image-frame">
+                <img 
+                    src="_images/outside1.jpg" >
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-info">
+            <div class="card">
+                <h2><i class="fa-solid fa-address-book"></i> Contact Information</h2>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>Email:</strong>
+                        <a href="mailto:boitumelo.motsuenyane@gmail.com">boitumelo.motsuenyane@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <strong>Phone:</strong>
+                        <a href="tel:+27727888604">072 788 8604</a>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Address:</strong>
+                        <span>Gammbani complex (Shop no.4)<br>Sibasa, 0970<br>Limpopo, South Africa</span>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <strong>Operating Hours:</strong>
+                        <span>
+                            <time datetime="Mo-Fr 08:00-17:00">Monday to Friday: 08:00 - 17:00</time><br>
+                            <time datetime="Sa 08:00-13:00">Saturday: 08:00 - 13:00</time>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <br>
+    <main class="contact-wrapper">
+        <!-- Interactive Map Location -->
+        <section class="contact-map">
+            <h2><i class="fa-solid fa-map-location-dot"></i> Find Us</h2>
+            
+            <!-- Leaflet Map Container -->
+            <div id="map" class="map-container"></div>
+            
+            <div class="map-directions">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=-22.949486,30.467563" target="_blank" rel="noopener noreferrer" class="directions-btn">
+                    <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+                </a>
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section class="social-section">
+            <h2><i class="fa-solid fa-share-nodes"></i> Connect With Us</h2>
+            <div class="social-links">
+                <a href="https://www.facebook.com/boitumelo.motsuenyane" target="_blank" rel="noopener noreferrer" class="social-link facebook">
+                    <i class="fab fa-facebook"></i>
+                    <span>Follow us on Facebook</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    
+    <!-- JavaScript -->
+    <script defer src="js_assets/contact_script.js"></script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Motsuenyane-Muhali Dental",
+      "image": "https://www.motsuenyane-muhali-dental.co.za/_images/outside1.jpg",
+      "description": "Professional dental care in Sibasa, Limpopo. Contact us for appointments and consultations.",
+      "@id": "https://www.motsuenyane-muhali-dental.co.za",
+      "url": "https://www.motsuenyane-muhali-dental.co.za",
+      "telephone": "+27727888604",
+      "email": "boitumelo.motsuenyane@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gammbani complex (Shop no.4)",
+        "addressLocality": "Sibasa",
+        "addressRegion": "Limpopo",
+        "postalCode": "0970",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-22.949486",
+        "longitude": "30.467563"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ],
+      "priceRange": "$",
+      "areaServed": {
+        "@type": "City",
+        "name": "Sibasa",
+        "containedIn": {
+          "@type": "State",
+          "name": "Limpopo"
+        }
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+27727888604",
+        "contactType": "Customer Service",
+        "email": "boitumelo.motsuenyane@gmail.com",
+        "availableLanguage": ["English", "Afrikaans"],
+        "areaServed": "ZA"
+      },
+      "sameAs": [
+        "https://www.facebook.com/boitumelo.motsuenyane"
+      ]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.motsuenyane-muhali-dental.co.za/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact Us",
+          "item": "https://www.motsuenyane-muhali-dental.co.za/contact.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Local Business Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Motsuenyane-Muhali Dental",
+      "image": "https://www.motsuenyane-muhali-dental.co.za/_images/outside1.jpg",
+      "@id": "https://www.motsuenyane-muhali-dental.co.za/contact",
+      "url": "https://www.motsuenyane-muhali-dental.co.za/contact.html",
+      "telephone": "+27727888604",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gammbani complex (Shop no.4)",
+        "addressLocality": "Sibasa",
+        "postalCode": "0970",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.949486,
+        "longitude": 30.467563
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &#169; 2025 Motsuenyane-Muhali Dental. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta name="description" content="Motsuenyane-Muhali Dental - Quality dental care services in Sibasa.">
+    <meta name="keywords" content="Dental, Sibasa, Medical Center, Motsuenyane-Muhali, Teeth, Care, Health, Dentistry, Enquiry">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Mokadi Motsuenyane">
+    <meta name="revist" content="30 days">
+
+    <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Title -->
+   <title>Book With Us | Motsuenyane-Muhali Dental</title>
+   <!-- Link to CSS file -->
+    <link rel="stylesheet" href="css_assets/enquries_styles.css">
+    <!-- Favicon -->
+   <link rel="icon" href="_images/logo.jpeg" type="image/x-icon">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- JavaScript  -->
+    <script defer src="js_assets/enquries_script.js"></script>
+     <!-- Schema Markup for SEO -->
+  <script type="application/ld+json">
+     {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Motsuenyane-Muhali Dental",
+      "image": "https://www.motsuenyane-muhali-dental.co.za/_images/team.jpg",
+      "description": "Professional dental care services in Sibasa, Limpopo. Established in 2022 by Mrs. Boitumelo Motsuenyane-Muhali. Quality treatment and oral health education.",
+      "foundingDate": "2022",
+      "founder": {
+        "@type": "Person",
+        "name": "Mrs. Boitumelo Motsuenyane-Muhali",
+        "jobTitle": "Founder & Dentist"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gammbani complex (Shop no.4)",
+        "addressLocality": "Sibasa",
+        "addressRegion": "Limpopo",
+        "postalCode": "0970",
+        "addressCountry": "ZA"
+      },
+      "telephone": "+27727888604",
+      "email": "boitumelo.motsuenyane@gmail.com",
+      "url": "https://www.motsuenyane-muhali-dental.co.za",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ],
+      "slogan": "Happy Teeth, Happy Smile",
+      "areaServed": {
+        "@type": "City",
+        "name": "Sibasa"
+      }
+    }
+  </script>
+</head>
+
+<body>
+    <header>
+        <!-- Website header -->
+        <h1>Book with us at Motsuenyane-Muhali Dental</h1>
+        <p>HAPPY TEETH, HAPPY SMILE</p>
+         <!-- Responsive Navigation -->
+    <nav class="header-nav">
+        <!-- Navigation Buttons -->
+        <nav class="header-nav">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <button class="oval-button" href="index.html" aria-current="page">
+                    <i class="fa-solid fa-house"></i><br>Home
+                </button>
+                <button class="oval-button" href="about.html">
+                    <i class="fa-solid fa-circle-info"></i><br>About Us
+                </button>
+                <button class="oval-button" href="services.html">
+                    <i class="fa-solid fa-tooth"></i><br>Services
+                </button>
+                <button class="oval-button" href="enquries.html">
+                    <i class="fa-solid fa-calendar-check"></i><br>Book Now
+                </button>
+                <button class="oval-button" href="contact.html">
+                    <i class="fa-solid fa-envelope"></i><br>Contact Us
+                </button>
+            </div>
+        </nav>
+</header>
+            <br>
+    <!-- Enquries Section -->
+        <div class="container">
+            <div class="title"> Book an Appointment</div>
+            <!--JavaScript Actions-->
+             <!-- Booking Form -->
+            <form id="form" action="https://formsubmit.co/mkhololuhle@gmail.com" method="POST" novalidate>
+                <!-- FormSubmit Hidden Fields -->
+                <input type="hidden" name="_subject" value="New Dental Appointment Booking">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://yourwebsite.com/success.html">
+                
+                <!-- User Details -->
+                <div class="user-details">
+                    <!-- Input Fields -->
+                    <div class="input-box">
+                        <span class="details">Full Name:</span>
+                        <input id="name" name="name" type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email:</span>
+                        <input id="email" name="email" type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone Number:</span>
+                        <input id="cellphone" name="cellphone" type="text" placeholder="Enter your number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Preferred Date:</span>
+                        <input id="date" name="date" type="date" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Preferred Time:</span>
+                        <input id="time" name="time" type="time" required min="07:30" max="17:00">
+                    </div>
+                    <!-- Service Selection -->
+                    <div class="input-box">
+                        <span class="details">Service Required:</span>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option value="general-checkup">General Check-up</option>
+                            <option value="teeth-cleaning">Teeth Cleaning</option>
+                            <option value="fillings">Fillings</option>
+                            <option value="root-canal">Root Canal Treatment</option>
+                            <option value="crowns-bridges">Crowns and Bridges</option>
+                            <option value="dentures">Dentures</option>
+                            <option value="orthodontics">Orthodontics (Braces)</option>
+                            <option value="cosmetic-dentistry">Cosmetic Dentistry</option>
+                            <option value="emergency-dental-care">Emergency Dental Care</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Error Message Display -->
+                <div id="error" class="error-message"></div>
+                <!-- Submit Button -->
+                <div class="button">
+                    <input type="submit" value="Book Now">
+                </div>
+             </form>
+         </div>
+        <!-- More Information -->
+        <br>
+          <p>For more information, please <a href="contact.html">contact us</a>.</p>
+
+    <!--footer-->
+     <footer>
+        <p>Copyright &#169; 2025 Motsuenyane-Muhali Dental. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

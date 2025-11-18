@@ -1,0 +1,107 @@
+# robots.txt for Motsuenyane-Muhali Dental Practice
+# Optimized for search engine crawling and security
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.motsuenyane-muhali-dental.co.za/sitemap.xml
+
+# Crawl delay to prevent server overload (1 second between requests)
+Crawl-delay: 1
+
+# Block access to sensitive directories and files
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /config/
+Disallow: /database/
+Disallow: /*.php$
+Disallow: /*.inc$
+Disallow: /*.sql$
+Disallow: /*.bak$
+
+# Block access to user data and forms
+Disallow: /patient-portal/
+Disallow: /appointments/confirm
+Disallow: /search?
+Disallow: /*?query=*
+Disallow: /*?search=*
+
+# Block duplicate content
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+Disallow: /print/
+
+# Allow CSS, JS, and images for proper rendering
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.ttf$
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Disallow: /search
+Disallow: /thank-you/
+Crawl-delay: 0.5
+
+# Specific rules for Google Image bot
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /assets/images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# Additional security - block common exploit attempts
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /xmlrpc.php
+Disallow: /.git/
+Disallow: /.env
+Disallow: /.htaccess
+Disallow: /composer.json
+Disallow: /package.json
+
+# Block session IDs and tracking parameters
+Disallow: /*sessionid=*
+Disallow: /*PHPSESSID=*
+Disallow: /*sid=*
+
+# Host directive
+# Host: https://www.motsuenyane-muhali-dental.co.za

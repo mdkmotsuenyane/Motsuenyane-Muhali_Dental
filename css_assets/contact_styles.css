@@ -1,0 +1,870 @@
+/* Buttons */
+.oval-button {
+  border: black;
+  color: black;
+  border-radius: 50px;
+  padding: 15px 32px;
+  font-size: 16px;
+  width: 145px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, opacity 0.3s;
+}
+/* General resets */
+* { 
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  /* Page transition */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Page transition styles */
+body.fade-out {
+  opacity: 0;
+}
+
+/* Header */
+header {
+  background-color: #35424a;
+  color: #ffffff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Headings */
+h3 {
+  text-align: center;
+  color: #35424a;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Images */
+img {
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  border: #000;
+  height: auto;
+  /* Image optimization styles */
+  transition: opacity 0.3s ease, filter 0.5s ease;
+}
+
+/* Loading state for images */
+img.loading {
+  opacity: 0.5;
+  filter: blur(5px);
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Loaded state for images */
+img.loaded {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Error state for images */
+img.error {
+  opacity: 0.3;
+  border: 2px dashed #ff0000;
+  background-color: #ffe0e0;
+}
+
+/* Shimmer animation for loading images */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Progressive image loading (blur-up effect) */
+img[data-lowsrc] {
+  filter: blur(10px);
+  transition: filter 0.5s ease;
+}
+
+/* Responsive images optimization */
+img[srcset] {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+/* Lazy loading placeholder */
+img[loading="lazy"] {
+  min-height: 200px;
+  background: linear-gradient(
+    90deg,
+    rgba(240, 240, 240, 1) 0%,
+    rgba(224, 224, 224, 1) 50%,
+    rgba(240, 240, 240, 1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Buttons */
+.oval-button {
+  border: none;
+  color: black;
+  border-radius: 50px;
+  padding: 15px 32px;
+  font-size: 16px;
+  width: 145px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, opacity 0.3s;
+  position: relative;
+}
+
+/* NEW PSEUDO-CLASS: Before element for button decoration */
+.oval-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50px;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.oval-button:hover::before {
+  opacity: 1;
+}
+
+/* Button States */
+.oval-button:hover {
+  background-color: rgba(18, 18, 133, 0.486);
+  transform: translateY(-2px);
+  color: white;
+}
+/* Active state for button press feedback */
+.oval-button:active {
+  background-color: black;
+  color: white;
+}
+/*Define focus state for accessibility*/
+.oval-button:focus {
+  background-color: blue;
+  outline: none;
+  color: white;
+}
+
+.clicked {
+  background-color: darkblue;
+  color: white;
+}
+
+/* Links */
+a:link { 
+  color: rgb(10, 5, 54);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: rgb(0, 255, 221); 
+}
+
+a:visited {
+  color: rgb(143, 28, 250); 
+}
+
+/* Navigation Styles */
+:root {
+  --primary-bg: #4c5eaf;
+  --hover-bg: #555;
+  --nav-bg: #35424a;
+  --text-color: #000;
+  --link-padding: 0.5rem 1rem;
+}
+
+/* Side navigation (if needed) */
+.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+/* Side navigation links */
+.sidenav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sidenav li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidenav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.nav-toggle {
+  display: none;
+  background: var(--nav-bg);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.oval-button i {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.oval-button:hover i {
+  transform: scale(1.1);
+}
+
+/* Responsive nav */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links.show {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .nav-toggle {
+    display: block;
+  }
+  
+  .oval-button {
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+}
+
+/* Flex layout for contact sections */
+.contact-wrapper {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #35424a;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Contact Image Section */
+.contact-image {
+  flex: 1 1 45%;
+  max-width: 500px;
+  animation: fadeIn 0.6s ease;
+}
+
+.image-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-image img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.contact-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  opacity: 0.9;
+  
+}
+
+/* Contact Info Section */
+.contact-info {
+  flex: 1 1 45%;
+  max-width: 500px;
+  animation: fadeIn 0.8s ease;
+}
+
+/* Card styling */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin: 1rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+}
+
+/* NEW PSEUDO-CLASS: After element for card accent */
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1c2497, #082585);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.card:hover::after {
+  width: 80%;
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  
+}
+/* Card header link hover */
+.card:hover a {
+  font-weight: bold;
+}
+/* Card Headings */
+.card h2 {
+  margin-top: 0;
+  color: #35424a;
+  text-align: center;
+}
+/* Card Heading Icons */
+.card h2 i {
+  margin-right: 10px;
+  color: #1c2497;
+}
+
+/* Info Items */
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+/* Info Item Icons */
+.info-item i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #082585;
+  min-width: 30px;
+}
+/* Info Item Text */
+.info-item div {
+  flex: 1;
+}
+/* Info Item Strong Text */
+.info-item strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+/* Map Section */
+.contact-map {
+  flex: 1 1 100%;
+  margin-top: 2rem;
+  animation: fadeIn 1s ease;
+}
+
+.contact-map h2 {
+  margin-bottom: 1rem;
+  color: rgb(0, 0, 0);
+}
+
+.contact-map h2 i {
+  margin-right: 10px;
+  color: #0712a5;
+}
+
+/* Map Container */
+.map-container {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  background: #e0e0e0;
+  position: relative;
+}
+
+.map-container.loading::after {
+  content: 'Loading map...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #35424a;
+  font-size: 1.2rem;
+}
+
+/* Fallback iframe map */
+.map-fallback {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.map-fallback iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Show fallback if Google Maps fails to load */
+#map:empty + .map-fallback {
+  display: block;
+}
+
+/* Directions Button */
+.map-directions {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.directions-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: white;
+  color: #35424a;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+/* NEW PSEUDO-CLASS: Before element for button shine effect */
+.directions-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.directions-btn:hover::before {
+  left: 100%;
+}
+
+.directions-btn:hover {
+  background: rgba(0, 0, 139, 0.322);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.directions-btn i {
+  margin-right: 0.5rem;
+}
+
+/* Social Section */
+.social-section {
+  flex: 1 1 100%;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Social Section hover effect */
+.social-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background-color: #6a8496;
+}
+/* Social Section Heading */
+.social-section h2 {
+  color: black;
+  margin-bottom: 1rem;
+}
+/* Social Section Heading hover effect */
+.social-section:hover h2 {
+  color: white;
+}
+/* Social Section Heading Icons */
+.social-section h2 i {
+  margin-right: 10px;
+  color: #1207ac;
+}
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+/* Individual Social Link */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #1877f2;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/*  After element for social link glow */
+.social-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(24, 119, 242, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-link:hover::after {
+  opacity: 1;
+}
+
+/* Social Link hover effect */
+.social-link:hover {
+  background-color: white;
+  color: #1877f2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(24, 119, 242, 0.3);
+}
+/* Social Link Icons */
+.social-link i {
+  font-size: 1.3rem;
+}
+
+/* Footer */
+footer {
+  background-color: #35424a;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Slide Down Animation */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks for medium screens */
+@media screen and (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .contact-image,
+  .contact-info,
+  .contact-map {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .map-container,
+  .map-fallback iframe {
+    height: 300px;
+  }
+}
+
+/* Additional tweaks for small screens */
+@media screen and (max-width: 480px) {
+  /* Reduce heading sizes */
+  h1 {
+    font-size: 1.5em;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  /* Button size adjustment */
+  .oval-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  /* Contact wrapper padding */
+  .contact-wrapper {
+    padding: 1rem;
+  }
+  /* Stack quick actions vertically */
+  .quick-actions {
+    flex-direction: column;
+  }
+  /** Make action buttons full width **/
+  .action-btn {
+    width: 100%;
+  }
+  /*map height adjustment*/
+  .map-container,
+  .map-fallback iframe {
+    height: 250px;
+  }
+ /* Stack info items vertically on small screens */
+  .info-item {
+    flex-direction: column;
+  }
+  /* Center icons in info items */
+  .info-item i {
+    margin-bottom: 0.5rem;
+  }
+}
+  /* Footer Navigation Styles */
+        .footer-navigation {
+            padding: 2rem 1rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+     /* Footer Navigation Grid */
+        .footer-nav-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        /* Footer Navigation Section Styles */
+        .footer-nav-section h4 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+         /* Footer Navigation Links Styles */
+        .footer-nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+            /* Individual Link Styles */    
+        .footer-nav-links li {
+            margin: 0.75rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-nav-links li i {
+            font-size: 0.9rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+           /* Hover Effect for Links */
+        .footer-link:hover {
+            color: #dde4e3;
+            transform: translateX(5px);
+        }
+            
+        footer .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+            margin: 0;
+        }
+            /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .footer-nav-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-nav-section h4 {
+                font-size: 1.1rem;
+            }
+
+            .footer-navigation {
+                padding: 1.5rem 1rem 1rem;
+            }
+        }
+             /* Animation Styles */
+        .footer-nav-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+            /* Staggered Animation Delays */
+        .footer-nav-section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .footer-nav-section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .footer-nav-section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+/* Leaflet map specific styles */
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.leaflet-popup-content {
+    margin: 10px;
+}
+
+.leaflet-popup h3 {
+    margin: 0 0 10px 0;
+    color: #35424a;
+    font-size: 1.2em;
+}
+
+.leaflet-popup p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.leaflet-popup a.directions-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #35424a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.leaflet-popup a.directions-link:hover {
+    background-color: #4c5eaf;
+}
+            /* Animation Keyframes */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }

@@ -1,0 +1,663 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  /* Page transition */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Page transition styles */
+body.fade-out {
+  opacity: 0;
+}
+
+/*header*/
+header {
+  background-color: #35424a;
+  color: #ffffff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Headings */
+h3 {
+  text-align: center;
+  color: #35424a;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+h2{
+  text-align: center;
+  color: #313d44;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Sections */
+section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+section li {
+  margin: 0.5em 0;
+}
+
+section p {
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+section strong {
+  display: inline-block;
+  width: 140px; 
+}
+
+/*Images*/
+img {
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  border: #000;
+  height: auto;
+  /* Image optimization styles */
+  transition: opacity 0.3s ease, filter 0.5s ease, transform 0.3s ease;
+  will-change: opacity, filter;
+}
+
+/* Loading state for images */
+img.loading {
+  opacity: 0.6;
+  filter: blur(8px);
+  background: linear-gradient(90deg, 
+    #f0f0f0 0%, 
+    #e0e0e0 25%, 
+    #f0f0f0 50%, 
+    #e0e0e0 75%, 
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* Loaded state for images */
+img.loaded {
+  opacity: 1;
+  filter: blur(0);
+  animation: fadeInImage 0.5s ease-in;
+}
+
+/* Error state for images */
+img.error {
+  opacity: 0.4;
+  border: 2px dashed #ff0000;
+  background-color: #ffe0e0;
+  position: relative;
+}
+
+/* Error state pseudo element */
+img.error::after {
+  content: '⚠ Failed to load';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff0000;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Shimmer animation for loading images */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Fade in animation for loaded images */
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Progressive image loading (blur-up effect) */
+img[data-lowsrc] {
+  filter: blur(15px);
+  transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive images optimization */
+img[srcset] {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+/* Lazy loading placeholder */
+img[loading="lazy"] {
+  min-height: 200px;
+  background: linear-gradient(
+    90deg,
+    rgba(240, 240, 240, 1) 0%,
+    rgba(224, 224, 224, 1) 50%,
+    rgba(240, 240, 240, 1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+/* High priority images load faster */
+img[importance="high"] {
+  content-visibility: auto;
+}
+
+.team-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.team-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.team-image-box {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 12px;
+  max-width: 400px;       
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.team-image-box img {
+   /* full width of container */
+  width: 100%;
+    /* maintain aspect ratio */           
+  height: auto;         
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+/* Optional hover effect */
+.team-image-box:hover img {
+  transform: scale(1.05);
+  
+}
+
+/* Cards for content sections */
+.card {
+  background-color: #303f497c;
+  margin: 0 auto;
+  padding: 0 1rem;
+  border-radius: 8px;
+  max-width: 800px;
+  color: black;
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/*Card hover effect for interactivity */
+.card:hover {
+  background-color: #35424a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  color:white;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+/* Card headings */
+.card h3 {
+  text-align: center;
+  color: black;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+/* Card heading hover effect */
+.card:hover h3 {
+  color: white;
+}
+
+/*Card focus state for accessibility*/
+.card:focus {
+  outline: 2px solid #000;
+}
+
+/* Container for main content */
+.container {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: lightslategray;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Centered text for paragraphs*/
+p{
+  text-align: center;
+}
+
+/* Buttons */
+.oval-button {
+  border: black;
+  color: black;
+  border-radius: 50px;
+  padding: 15px 32px;
+  font-size: 16px;
+  width: 145px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, opacity 0.3s;
+}
+
+/*Define hover state for accessibility*/
+.oval-button:hover {
+  background-color: rgba(18, 18, 133, 0.486);
+  transform : translateY(-2px);
+  color: white;
+}
+
+/*Define active state for button press*/
+.oval-button:active {
+  background-color: black;
+  color: white;
+}
+
+/*Define focus state for accessibility*/
+.oval-button:focus {
+   background-color: blue;
+   outline: none;
+   color: white;
+}
+
+/*Define clicked state for accessibility*/
+.clicked{
+  background-color: darkblue;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: #35424a;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* Links */
+a:link { 
+    color: rgb(10, 5, 54);
+    transition: color 0.3s ease;
+ }
+
+a:hover {
+     color: rgb(0, 255, 221); 
+    }
+
+a:visited {
+     color: rgb(143, 28, 250); 
+    }
+
+/* Side navigation (if needed) */
+.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidenav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sidenav li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidenav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Responsive tweaks */
+div.content {
+  margin-left: 25%;
+  padding: 1px 16px;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 900px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  /*side navigation links*/
+  .sidenav li a {
+    float: left;
+    padding: 15px;
+  }
+  
+  /*content section*/
+  div.content { 
+    margin-left: 0;
+ }
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 400px) {
+  /*side navigation links*/
+  .sidenav li a {
+    text-align: center;
+    float: none;
+  }
+}
+
+/* Side navigation (if needed) */
+:root {
+  --primary-bg: #4CAF50;
+  --hover-bg: #555;
+  --nav-bg: #35424a;
+  --text-color: #000;
+  --link-padding: 0.5rem 1rem;
+}
+
+/* Side Navigation */
+.sidenav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidenav li a {
+  display: block;
+  color: var(--text-color);
+  padding: var(--link-padding);
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.sidenav li a.active {
+  background: var(--primary-bg);
+  color: #fff;
+}
+
+.sidenav li a:hover:not(.active) {
+  background: var(--hover-bg);
+  color: #fff;
+}
+
+.sidenav li a:focus {
+  outline: 2px solid var(--primary-bg);
+}
+
+/* Content offset */
+div.content {
+  margin-left: 25%;
+  padding: 0.5rem 1rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 400px) {
+  .sidenav li a {
+    text-align: center;
+    float: none;
+  }
+}
+
+/* Header Nav */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Nav toggle button */
+.nav-toggle {
+  display: none;
+  background: var(--nav-bg);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Oval button icons */
+.oval-button i {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.oval-button:hover i {
+  transform: scale(1.1);
+}
+
+/* Responsive nav */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links.show {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .nav-toggle {
+    display: block;
+  }
+  
+  .oval-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Footer Navigation Styles */
+.footer-navigation {
+    padding: 2rem 1rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer Navigation Grid */
+.footer-nav-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Footer Navigation Section Styles */
+.footer-nav-section h4 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Footer Navigation Links Styles */
+.footer-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual Link Styles */    
+.footer-nav-links li {
+    margin: 0.75rem 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-nav-links li i {
+    font-size: 0.9rem;
+    width: 20px;
+    text-align: center;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Hover Effect for Links */
+.footer-link:hover {
+    color: #dde4e3;
+    transform: translateX(5px);
+}
+    
+footer .copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-nav-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-nav-section h4 {
+        font-size: 1.1rem;
+    }
+
+    .footer-navigation {
+        padding: 1.5rem 1rem 1rem;
+    }
+}
+
+/* Animation Styles */
+.footer-nav-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Staggered Animation Delays */
+.footer-nav-section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.footer-nav-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.footer-nav-section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide down */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
