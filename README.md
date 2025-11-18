@@ -1,4 +1,4 @@
-# Motsuenyane-Muhail Dental Website
+# Motsuenyane-Muhalo Dental Website
 
 A professional website for Motsuenyane-Muhail Dental practice, providing information about services, contact details, and patient enquiries.
 
@@ -11,7 +11,7 @@ A professional website for Motsuenyane-Muhail Dental practice, providing informa
 - A local web server (for full functionality) - XAMPP, WAMP, or Live Server extension recommended
 
 ### Installation
- Open your web browser and navigate to `http://localhost/Motsuenyane-Muhail Dental/`
+ Open your web browser and navigate to `http://localhost/Motsuenyane-Muhali Dental/`
 
 ## 📄 Page Descriptions
 
