@@ -1,6 +1,6 @@
-# Motsuenyane-Muhalo Dental Website
+# Motsuenyane-Muhali Dental Website
 
-A professional website for Motsuenyane-Muhail Dental practice, providing information about services, contact details, and patient enquiries.
+A professional website for Motsuenyane-Muhali Dental practice, providing information about services, contact details, and patient enquiries.
 
 ## 🏗️ Project Structure
 
@@ -79,4 +79,4 @@ For technical issues or questions about this website:
 
 ## 📝 License
 
-This project is proprietary and belongs to Motsuenyane-Muhail Dental Practice.
+This project is proprietary and belongs to Motsuenyane-Muhali Dental Practice.
